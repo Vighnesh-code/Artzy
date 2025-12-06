@@ -18,21 +18,24 @@ import { IoIosLogOut } from "react-icons/io";
 
 const Navbar = () => {
   return (
-    <div className="flex px-10 items-center justify-between">
+    <div className="flex px-10 items-center justify-between gap-5">
       {/* Logo */}
-      <div>
+      <div className="h-full px-10">
         <h1 className="text-3xl">Artzy</h1>
       </div>
 
       {/* Search Field */}
-      <div className="flex items-center bg-slate-100 px-4 rounded-full py-1">
+      <div className="flex items-center bg-slate-100 px-4 rounded-full py-1 ml-8">
         <Input
           type="text"
-          className="focus-visible:ring-0 border-none"
+          className="focus-visible:ring-0 border-none w-100"
           placeholder="Search"
         />
         <IoSearch className="size-7" />
       </div>
+
+      {/* Spacer */}
+      <div className="flex-1" />
 
       {/* Action Toggles */}
       <div className="flex gap-5 items-center">
@@ -43,7 +46,7 @@ const Navbar = () => {
         <DropdownMenu>
           <DropdownMenuTrigger>
             <div className="flex items-center bg-slate-100 rounded-full">
-              <div className="rounded-full bg-yellow-200 size-10" />
+              <div className="rounded-full bg-[#FDE3EC] size-10" />
               <RiArrowDropDownFill className="size-6" />
             </div>
           </DropdownMenuTrigger>
