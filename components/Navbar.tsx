@@ -18,7 +18,7 @@ import { IoIosLogOut } from "react-icons/io";
 
 const Navbar = () => {
   return (
-    <div className="flex px-10 items-center justify-between gap-5">
+    <div className="flex px-10 py-2 items-center justify-between gap-5">
       {/* Logo */}
       <div className="h-full px-10">
         <h1 className="text-3xl">Artzy</h1>
@@ -28,7 +28,7 @@ const Navbar = () => {
       <div className="flex items-center bg-slate-100 px-4 rounded-full py-1 ml-8">
         <Input
           type="text"
-          className="focus-visible:ring-0 border-none w-100"
+          className="focus-visible:ring-0 border-none w-100 selection:bg-[#FDE3EC] selection:text-black"
           placeholder="Search"
         />
         <IoSearch className="size-7" />

@@ -36,12 +36,12 @@ const CategoriesSection = () => {
   ];
 
   return (
-    <div className="flex flex-col gap-10 min-w-60 px-7 py-10">
+    <div className="flex flex-col gap-10 min-w-60 px-7 py-10 select-none">
       <div className="flex flex-col gap-3 justify-center">
         {categoryData.map((category) => (
           <div
             key={category.id}
-            className="flex items-center gap-4 w-full bg-[#FDE3EC] hover:bg-white hover:border-2 hover:border-[#FDE3EC] hover:cursor-pointer hover:scale-110 hover:text-slate-500 duration-300 rounded-full py-2 px-5"
+            className="flex items-center gap-4 w-full bg-[#FDE3EC] hover:bg-[#FDE3EC]/30 hover:border-2 hover:border-[#FDE3EC] hover:cursor-pointer hover:scale-110 hover:text-slate-500 duration-300 rounded-full py-2 px-5"
           >
             {/* {category.icon} */}
             <category.icon className="size-5" />
@@ -50,7 +50,7 @@ const CategoriesSection = () => {
         ))}
       </div>
 
-      <Separator />
+      <Separator className="bg-slate-300" />
     </div>
   );
 };
