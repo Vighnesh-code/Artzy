@@ -4,11 +4,13 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
 export default function Home() {
-  const [active, setActive] = useState(false);
+  const [activeCategory, setActiveCategory] = useState("Feeds");
 
-  const handleCategoryToggle = (prevState: Boolean) => {
-    console.log("Active State: ", active);
-    setActive(!prevState);
+  const categories = ["Feeds", "All", "Following", "Latest", "Popular"];
+
+  const handleCategoryToggle = (category: string) => {
+    setActiveCategory(category);
+    console.log("Selected Category: ", category);
   };
 
   return (
@@ -35,36 +37,17 @@ export default function Home() {
 
           {/* Toggle Section */}
           <div className="flex gap-10">
-            <Button
-              className={`${
-                active
-                  ? "bg-[#FFE2E2]"
-                  : "bg-[#FFF9FB] text-slate-500 text-[17px] rounded-full hover:bg-[#FFE2E2] hover:scale-110 duration-300"
-              }`}
-              onClick={() => handleCategoryToggle(prevState)}
-            >
-              Feeds
-            </Button>
-            <Button
-              className={`bg-[#FFF9FB] text-slate-500 text-[17px] rounded-full hover:bg-[#FFE2E2] hover:scale-110 duration-300`}
-            >
-              All
-            </Button>
-            <Button
-              className={`bg-[#FFF9FB] text-slate-500 text-[17px] rounded-full hover:bg-[#FFE2E2] hover:scale-110 duration-300`}
-            >
-              Following
-            </Button>
-            <Button
-              className={`bg-[#FFF9FB] text-slate-500 text-[17px] rounded-full hover:bg-[#FFE2E2] hover:scale-110 duration-300`}
-            >
-              Latest
-            </Button>
-            <Button
-              className={`bg-[#FFF9FB] text-slate-500 text-[17px] rounded-full hover:bg-[#FFE2E2] hover:scale-110 duration-300`}
-            >
-              Popular
-            </Button>
+            {categories.map((category) => (
+              <Button
+                key={category}
+                className={`bg-white border-2 border-[#FFE2E2] text-slate-1000 text-[15px] font-semibold rounded-full hover:bg-[#FFE2E2] hover:scale-110 duration-300 ${
+                  activeCategory === category && "bg-[#FFE2E2] scale-110"
+                }`}
+                onClick={() => handleCategoryToggle(category)}
+              >
+                {category}
+              </Button>
+            ))}
           </div>
         </div>
       </div>
